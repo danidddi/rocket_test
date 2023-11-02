@@ -1,0 +1,238 @@
+.nav {
+
+    &__burger {
+        display: none;
+        position: relative;
+        width: 37px;
+        height: 26px;
+
+        &.active::before {
+            transform: rotate(45deg);
+            top: 11px;
+        }
+
+        &.active::after {
+            transform: rotate(-45deg);
+            bottom: 11px;
+        }
+
+        & span {
+            position: absolute;
+            left: 0;
+            top: 11px;
+            width: 100%;
+            height: 4px;
+            background-color: #1FA181;
+            transition: all 0.3s ease 0s;
+        }
+
+        &.active span {
+            transform: scale(0);
+        }
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            background-color: #1FA181;
+            width: 100%;
+            height: 4px;
+            transition: all 0.3s ease 0s;
+        }
+
+        &::before {
+            top: 0;
+        }
+
+        &::after {
+            bottom: 0;
+        }
+
+        @media (max-width:767px) {
+            display: block;
+        }
+    }
+
+    &__header {
+        background: white;
+        position: relative;
+        z-index: 100;
+    }
+
+    &__row {
+        min-height: 67px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__column {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    &__logo {
+        cursor: pointer;
+        display: flex;
+        align-self: center;
+
+        @media (max-width:767px) {
+            width: 62px;
+            height: 18px;
+            margin-left: 28px;
+        }
+    }
+
+    &__location {
+        cursor: default;
+
+        @media (max-width:767px) {
+            display: none;
+        }
+    }
+
+    &__city {
+        color: #364844;
+        font-size: 14px;
+        line-height: 21px;
+        display: flex;
+        align-items: center;
+
+        &::before {
+            content: "";
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-image: url('../img/header/point.svg');
+        }
+    }
+
+    &__street {
+        color: var(--2, #868686);
+        font-size: 14px;
+        line-height: 21px;
+        margin-left: 20px;
+    }
+
+    &__number {
+        display: flex;
+        align-items: center;
+        color: #364844;
+        cursor: pointer;
+
+        @media (max-width:767px) {
+            flex-direction: column;
+            align-items: end;
+        }
+    }
+
+    &__mobile-city {
+        display: none;
+        font-size: 13px;
+        line-height: 17px;
+        letter-spacing: 0em;
+
+        @media (max-width:767px) {
+            display: block;
+        }
+    }
+
+    &__appointment {
+        @media (max-width:767px) {
+            display: none;
+        }
+    }
+
+    &__menu {
+        width: 100%;
+        min-height: 43px;
+        background-color: #1FA181;
+        color: white;
+        display: flex;
+        align-items: center;
+        transition: all 0.3s ease 0s;
+        overflow: auto;
+
+        @media (max-width: 767px) {
+            background: #45927FE5;
+            backdrop-filter: blur(2px);
+            position: absolute;
+            left: 0;
+            top: -100%;
+            height: 100%;
+            z-index: 10;
+        }
+
+
+        &.active {
+            top: 0;
+
+            @media (max-width: 767px) and (orientation:landscape) {
+                top: 66px;
+            }
+        }
+
+    }
+
+    &__links {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        height: 100%;
+
+        @media (max-width: 767px) {
+            overflow: auto;
+            flex-direction: column;
+            align-items: start;
+            margin-bottom: 220px;
+
+            @media (orientation:landscape) {
+                margin-top: 15px;
+            }
+        }
+    }
+
+    &__mobile-appointment {
+        display: none;
+
+        @media (max-width: 767px) {
+            display: block;
+            font-weight: 700;
+        }
+    }
+
+    &__link {
+        color: white;
+    }
+}
+
+.number {
+    color: #364844;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+
+    @media (max-width:767px) {
+        font-weight: 700;
+        line-height: 20px;
+    }
+
+    &::before {
+        content: "";
+        display: inline-block;
+        margin-right: 9px;
+        width: 28px;
+        height: 28px;
+        background-image: url('../img/header/whatsapp.svg');
+
+        @media (max-width:767px) {
+            display: none;
+        }
+    }
+}
+
+body.lock {
+    overflow: hidden;
+}

@@ -1,0 +1,113 @@
+.swiper {
+    margin-bottom: 92px;
+    min-height: 500px;
+
+    @media (max-width:767px) {
+        min-height: 620px;
+        border-radius: 5px;
+        margin-bottom: 35px;
+    }
+    // @media (max-width:576px) {
+    //     min-height: 820px;
+    //     border-radius: 5px;
+    //     margin-bottom: 35px;
+    // }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    background: #C0C0C0;
+    height: 2px;
+    width: 34px;
+    margin: 0 auto;
+    position: relative;
+    bottom: -43px;
+    left: -70px;
+    cursor: pointer;
+    border-radius: 5px;
+
+    &:before,
+    &:after {
+        content: "";
+        background: #C0C0C0;
+        position: absolute;
+        height: 3px;
+        width: 15px;
+        border-radius: 5px;
+    }
+
+    &:before {
+        right: 21px;
+        bottom: -5px;
+        transform: rotate(45deg);
+    }
+
+    &:after {
+        right: 21px;
+        top: -5.5px;
+        transform: rotate(-45deg);
+    }
+
+    @media (max-width:767px) {
+        bottom: -23px;
+    }
+}
+
+.swiper-button-prev {
+    left: -70px;
+
+    &:before {
+        right: 21px;
+        bottom: -5px;
+        transform: rotate(45deg);
+    }
+
+    &:after {
+        right: 21px;
+        top: -5.5px;
+        transform: rotate(-45deg);
+    }
+}
+
+.swiper-button-next {
+    left: 70px;
+
+    &:before {
+        right: -4px;
+        bottom: -5px;
+        transform: rotate(-45deg);
+    }
+
+    &:after {
+        right: -4px;
+        top: -5.5px;
+        transform: rotate(45deg);
+    }
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+    background: green;
+    transition-duration: 200ms;
+
+    &:before,
+    &:after {
+        transition-duration: 200ms;
+        background: green;
+    }
+}
+
+.swiper-pagination {
+    @media (max-width:767px) {
+        position: relative;
+        top: 33px;
+    }
+}
+
+.swiper-pagination-current {
+    color: black;
+}
+
+.swiper-pagination-total {
+    color: #C0C0C0;
+}

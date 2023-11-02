@@ -1,0 +1,79 @@
+@import '_nullstyle.scss';
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Caption&display=swap');
+
+html,
+body {
+    font-family: 'PT Sans Caption', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.wrapper {
+    height: 100%;
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1140px;
+    width: 100%;
+    margin: auto;
+
+    @media (max-width:1140px) {
+        padding: 0 17px;
+    }
+}
+
+@import '_header.scss';
+@import '_main.scss';
+@import '_footer.scss';
+@import '_modal.scss';
+@import '_swiper.scss';
+
+.button_empty,
+.button_fill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 196px;
+    height: 43px;
+    flex-shrink: 0;
+    border-radius: 50px;
+    font-size: 14px;
+    line-height: 21px;
+
+    transition-duration: 200ms;
+
+    &:hover {
+        background: #00D29F;
+    }
+
+    @media (max-width: 767px) {
+        width: auto;
+        min-width: 137px;
+        padding: 20px;
+    }
+}
+
+.button_fill {
+    background: #0DBC91;
+    color: #FFF;
+
+    &:hover {
+        background: #00D29F;
+    }
+}
+
+.button_empty {
+    border: 1px solid #0DBC91;
+    background-color: #E2F0EF;
+    color: #0DBC91;
+
+    &:hover {
+        border: 1px solid #0DBC91;
+        background: #0DBC91;
+        color: #FFF;
+    }
+}
